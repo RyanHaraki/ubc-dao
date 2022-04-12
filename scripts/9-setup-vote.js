@@ -1,14 +1,14 @@
 import { ethers } from "ethers";
 import sdk from "./1-initialize-sdk.js";
 
-// This is our governance contract.
+// governance contract.
 const voteModule = sdk.getVoteModule(
-  "INSERT_VOTING_MODULE_ADDRESS",
+  "0x2cF7e32D09281D8Af85544BC53F2A9BcF39543ca"
 );
 
-// This is our ERC-20 contract.
+// ERC-20 contract.
 const tokenModule = sdk.getTokenModule(
-  "INSERT_TOKEN_MODULE_ADDRESS",
+  "0x30c1309FAE4D0480c22329Bd35cDDbc691Cb7D04"
 );
 
 (async () => {
@@ -28,7 +28,7 @@ const tokenModule = sdk.getTokenModule(
   }
 
   try {
-    // Grab our wallet's token balance, remember -- we hold basically the entire supply right now!
+    // Grab our wallet's token balance
     const ownedTokenBalance = await tokenModule.balanceOf(
       process.env.WALLET_ADDRESS
     );
@@ -38,10 +38,7 @@ const tokenModule = sdk.getTokenModule(
     const percent90 = ownedAmount.div(100).mul(90);
 
     // Transfer 90% of the supply to our voting contract.
-    await tokenModule.transfer(
-      voteModule.address,
-      percent90
-    );
+    await tokenModule.transfer(voteModule.address, percent90);
 
     console.log("✅ Successfully transferred tokens to vote module");
   } catch (err) {

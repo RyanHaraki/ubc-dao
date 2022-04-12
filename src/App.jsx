@@ -7,15 +7,15 @@ import { ThirdwebSDK } from "@3rdweb/sdk";
 const sdk = new ThirdwebSDK("rinkeby");
 
 const bundleDropModule = sdk.getBundleDropModule(
-  "<DROP_MODULE_ADDRESS>",
+  "0x68e35A7B5bF415e4F71EB7714D0a56442D2d1Cbf",
 );
 
 const tokenModule = sdk.getTokenModule(
-  "<TOKEN_MODULE_ADDRESS>"
+  "0x30c1309FAE4D0480c22329Bd35cDDbc691Cb7D04"
 );
 
 const voteModule = sdk.getVoteModule(
-  "<VOTE_MODULE_ADDRESS>",
+  "0x2cF7e32D09281D8Af85544BC53F2A9BcF39543ca",
 );
 
 const App = () => {
@@ -181,7 +181,7 @@ const App = () => {
   if (!address) {
     return (
       <div className="landing">
-        <h1>Welcome to NarutoDAO</h1>
+        <h1>Welcome to UBC DAO</h1>
         <button onClick={() => connectWallet("injected")} className="btn-hero">
           Connect your wallet
         </button>
@@ -194,7 +194,7 @@ const App = () => {
   if (hasClaimedNFT) {
     return (
       <div className="member-page">
-        <h1>🍪DAO Member Page</h1>
+        <h1>DAO Member Page</h1>
         <p>Congratulations on being a member</p>
         <div>
           <div>
@@ -350,7 +350,7 @@ const App = () => {
   // Render mint nft screen.
   return (
     <div className="mint-nft">
-      <h1>Mint your free 🍪DAO Membership NFT</h1>
+      <h1>Mint your free UBC DAO Founding Membership NFT</h1>
       <button
         disabled={isClaiming}
         onClick={() => {

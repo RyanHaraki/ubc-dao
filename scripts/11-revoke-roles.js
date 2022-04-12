@@ -1,7 +1,7 @@
 import sdk from "./1-initialize-sdk.js";
 
 const tokenModule = sdk.getTokenModule(
-  "INSERT_YOUR_TOKEN_MODULE_ADDRESS",
+  "0x30c1309FAE4D0480c22329Bd35cDDbc691Cb7D04"
 );
 
 (async () => {
@@ -18,8 +18,9 @@ const tokenModule = sdk.getTokenModule(
       "🎉 Roles after revoking ourselves",
       await tokenModule.getAllRoleMembers()
     );
-    console.log("✅ Successfully revoked our superpowers from the ERC-20 contract");
-
+    console.log(
+      "✅ Successfully revoked our superpowers from the ERC-20 contract"
+    );
   } catch (error) {
     console.error("Failed to revoke ourselves from the DAO trasury", error);
   }

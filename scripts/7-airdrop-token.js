@@ -3,12 +3,12 @@ import sdk from "./1-initialize-sdk.js";
 
 // This is the address to our ERC-1155 membership NFT contract.
 const bundleDropModule = sdk.getBundleDropModule(
-  "<DROP_MODULE_ADDRESS>",
+  "0x68e35A7B5bF415e4F71EB7714D0a56442D2d1Cbf",
 );
 
 // This is the address to our ERC-20 token contract.
 const tokenModule = sdk.getTokenModule(
-  "<TOKEN_MODULE_ADDRESS>",
+  "0x30c1309FAE4D0480c22329Bd35cDDbc691Cb7D04",
 );
 
 (async () => {

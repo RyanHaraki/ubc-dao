@@ -20,11 +20,9 @@ if (!process.env.WALLET_ADDRESS || process.env.WALLET_ADDRESS == "") {
 
 const sdk = new ThirdwebSDK(
   new ethers.Wallet(
-    // Your wallet private key. ALWAYS KEEP THIS PRIVATE, DO NOT SHARE IT WITH ANYONE, add it to your .env file and do not commit that file to github!
     process.env.PRIVATE_KEY,
-    // RPC URL, we'll use our Alchemy API URL from our .env file.
-    ethers.getDefaultProvider(process.env.ALCHEMY_API_URL),
-  ),
+    ethers.getDefaultProvider(process.env.ALCHEMY_API_URL)
+  )
 );
 
 (async () => {
@@ -37,5 +35,4 @@ const sdk = new ThirdwebSDK(
   }
 })();
 
-// We are exporting the initialized thirdweb SDK so that we can use it in our other scripts
 export default sdk;
